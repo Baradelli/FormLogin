@@ -1,0 +1,260 @@
+:root {
+  --text-base: #f4fff7;
+  --text-title: #fff7dc;
+  --background: #1a1919;
+  --form-background: #212121;
+  --primary-color: #41a55b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 100%;
+  min-width: 320px;
+
+  height: 0;
+  max-height: 100%;
+  min-height: 100%;
+}
+
+.form-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+
+  background: var(--background);
+
+  position: relative;
+}
+
+.form-container form {
+  min-width: 500px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.form-container .logo {
+  position: absolute;
+
+  top: 40px;
+  left: 40px;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  background: var(--form-background);
+
+  width: 100%;
+  padding: 55px;
+}
+
+.form-container .form .header {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.form-container .form .header .title {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text-title);
+}
+
+.form-container .form .header .subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text-base);
+}
+
+.form-container .form .input {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  position: relative;
+}
+
+.form-container .form .input label {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text-base);
+}
+
+.form-container .form .input input {
+  background: var(--form-background);
+
+  border: 1px solid #868686;
+  border-radius: 4px;
+
+  padding: 7px;
+  padding-left: 34px;
+
+  font-weight: 400;
+  color: var(--text-base);
+
+  width: 100%;
+}
+
+.form-container .form .input input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+.form-container .form .input input::placeholder {
+  font-weight: 400;
+  color: var(--text-base);
+}
+
+.form-container .form .input .icon {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+
+  inset: 0;
+
+  margin: auto 0;
+  top: 23px;
+  left: 7px;
+}
+
+.form-container .form .input .icon-eye {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+
+  margin: auto 0;
+  top: 30px;
+  right: 7px;
+}
+
+.form-container .form .submit {
+  width: 100%;
+
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: none;
+
+  background: var(--primary-color);
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #03310d;
+
+  cursor: pointer;
+}
+
+.form-container .form .register {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--primary-color);
+}
+
+.forget-password {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+
+  position: relative;
+}
+
+.forget-password .checkbox {
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid #868686;
+  border-radius: 4px;
+  vertical-align: sub;
+  outline: none;
+  cursor: pointer;
+}
+
+.forget-password .checkbox:checked {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.forget-password label {
+  color: var(--text-base);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.forget-password strong {
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+.side-image {
+  min-width: 100%;
+  max-width: 100%;
+
+  min-height: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 1320px) {
+  .form-container form {
+    min-width: 0px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .form-container .form {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .side-image {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .form-container .form {
+    background: transparent;
+    padding: 0px;
+  }
+
+  .form-container .logo {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+  }
+}
